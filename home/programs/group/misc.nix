@@ -1,6 +1,5 @@
 {
   pkgs-stable,
-  pkgs-nur-hadi,
   inputs,
   ...
 }: {

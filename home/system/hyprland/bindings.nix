@@ -61,11 +61,6 @@ in {
               cmd = "${config.programs.helium.package}/bin/helium 'https://mail.proton.me/'";
             }
             {
-              key = "o";
-              desc = "Obsidian";
-              cmd = "${pkgs.obsidian}/bin/obsidian";
-            }
-            {
               key = "s";
               desc = "Signal";
               cmd = "${pkgs.signal-desktop}/bin/signal-desktop";

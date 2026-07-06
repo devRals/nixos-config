@@ -56,27 +56,6 @@
         action = "<cmd>lua Snacks.lazygit()<cr>";
         desc = "Lazygit";
       }
-      {
-        key = "<leader>ts";
-        mode = "v";
-        silent = true;
-        action = ":<C-u>SttrTransform<CR>";
-        desc = "String Transform";
-      }
-      {
-        key = "<leader>tj";
-        mode = "n";
-        silent = true;
-        action = ":JwtTui<CR>";
-        desc = "JWT TUI";
-      }
-      {
-        key = "<leader>tj";
-        mode = "v";
-        silent = true;
-        action = ":<C-u>JwtTuiOpen<CR>";
-        desc = "JWT TUI";
-      }
 
       # UI
       {

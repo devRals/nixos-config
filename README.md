@@ -31,22 +31,13 @@ _secrets_, and _custom theming_ all in one place.
 
 **Features:**
 
-- 💻 Hyprland & Caelestia: Preconfigured Hyprland ecosystem with Caelestia-shell (Ty to both projects!)
+- 💻 Hyprland: Preconfigured Hyprland ecosystem
 - 🎨 Consistent Theming: Base16 & Stylix-powered themes
 - ⌨️ Vim-like Everywhere: Unified keybindings (Hyprland, nvim, vimium, etc.)
 
 ## Table of Content
 
-- [Table of Content](#table-of-content)
-- [Screenshots](#screenshots)
-- [Architecture](#architecture)
-  - [🏠 /home (User-level configuration)](#-home-user-level-configuration)
-  - [🐧 /nixos](#-nixos)
-  - [🎨 /themes](#-themes)
-  - [💻 /hosts](#-hosts)
-  - [🖥️ /server-modules](#-server-modules)
-- [Installation](#installation)
-- [Documentation](#documentation)
+
 
 ## Screenshots
 
@@ -67,8 +58,7 @@ Contains **dotfiles and settings** that apply to your user environment.
 
 ### 🐧 /nixos
 
-Those are the system-level configurations. (audio, bluetooth, gpu, bootloader,
-...)
+Those are the system-level configurations. (audio, bluetooth, gpu, bootloader, ...)
 
 ### 🎨 /themes
 
@@ -90,6 +80,10 @@ This directory contains host-specific configurations. Each host includes:
 This folder contains server-related nixos modules. (bitwarden, nextcloud, ...)
 
 ## Installation
+
+> [!IMPORTANT]
+> This configuration based of anotherhadi's system configuration so it's
+> recommended to use their instructions if you wanna edit your own host system.
 
 1. [Fork](https://github.com/anotherhadi/nixy/fork) this repo and clone it to
    your system:
