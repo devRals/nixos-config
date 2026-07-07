@@ -28,11 +28,6 @@
     };
     lsp = {
       enable = true;
-      presets = {
-        tailwindcss-language-server = {
-          enable = true;
-        };
-      };
       trouble.enable = true;
       lspSignature.enable = true;
       lspconfig.enable = true;
@@ -98,11 +93,11 @@
       };
       typescript.enable = true;
       css.enable = true;
-      svelte.enable = true;
       html.enable = true;
       bash.enable = true;
       nix.enable = true;
       lua.enable = true;
+      rust.enable = true;
     };
     formatter = {
       conform-nvim = {

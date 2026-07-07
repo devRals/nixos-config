@@ -16,7 +16,7 @@
 in {
   wayland.windowManager.hyprland.settings = {
     animations = {
-      enabled = true;
+      enabled = false; # CHANGEME: I personally don't like and use animations. Becase...well...my pc is not a NASA COMPUTER or something like that.
       bezier = [
         "linear, 0, 0, 1, 1"
         "md3_standard, 0.2, 0, 0, 1"

@@ -3,7 +3,6 @@
     # Programs
     ../../home/programs/helium
     ../../home/programs/proton
-    ../../home/programs/proton/auto-start-vpn.nix
     ../../home/programs/ghostty
     ../../home/programs/nvf
     ../../home/programs/shell
@@ -22,7 +21,6 @@
 
     # System (Desktop environment like stuff)
     ../../home/system/hyprland
-    ../../home/system/caelestia-shell
     ../../home/system/hyprpaper
     ../../home/system/mime
     ../../home/system/udiskie

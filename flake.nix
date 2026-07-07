@@ -21,15 +21,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    caelestia-shell = {
-      url = "github:caelestia-dots/shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    caelestia-cli = {
-      url = "github:caelestia-dots/cli";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs @ {
@@ -39,7 +30,7 @@
   }: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-      pkgs-stable = nixpkgs-stable.legacyPackages.${system};
+    pkgs-stable = nixpkgs-stable.legacyPackages.${system};
     args = {
       inherit
         inputs
@@ -57,8 +48,8 @@
       (import ./home/programs/nixy/flake.nix args)
       {
         formatter.${system} = pkgs.alejandra;
-        nixosConfigurations = { 
-           meow = import ./hosts/meow/flake.nix args; # cool hostname :3
+        nixosConfigurations = {
+          meow = import ./hosts/meow/flake.nix args; # cool hostname :3
         };
       }
     ];

@@ -7,17 +7,17 @@
   options.theme = lib.mkOption {
     type = lib.types.attrs;
     default = {
-      rounding = 20;
+      rounding = 2;
       bar-rounding = 20 + 10;
       bar-thickness = 0;
       gaps-in = 8;
       gaps-out = 8 * 2;
       active-opacity = 0.96;
       inactive-opacity = 0.92;
-      blur = true;
+      blur = false;
       border-size = 2;
-      animation-speed = "medium"; # "fast" | "medium" | "slow"
-      fetch = "none"; # "nerdfetch" | "neofetch" | "pfetch" | "none"
+      animation-speed = "fast"; # "fast" | "medium" | "slow"
+      fetch = "pfetch"; # "nerdfetch" | "neofetch" | "pfetch" | "none"
     };
     description = "Theme configuration options";
   };

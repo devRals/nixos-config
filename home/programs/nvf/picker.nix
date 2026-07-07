@@ -4,7 +4,6 @@
       snacks-nvim = {
         setupOpts = {
           picker.enabled = true;
-          explorer.enabled = true;
         };
       };
     };
@@ -16,13 +15,6 @@
         silent = true;
         action = "<cmd>lua Snacks.picker.smart()<cr>";
         desc = "Smart Find Files";
-      }
-      {
-        key = "<leader>E";
-        mode = "n";
-        silent = true;
-        action = "<cmd>lua Snacks.explorer()<cr>";
-        desc = "File Explorer";
       }
       {
         key = "<leader>/";
@@ -97,6 +89,12 @@
         silent = true;
         action = "<cmd>lua Snacks.picker.grep_word()<cr>";
         desc = "Visual selection or word";
+      }
+      {
+        key = "<leader>sd";
+        mode = "n";
+        silent = true;
+        action = "<cmd>lua Snacks.picker.diagnostics()<cr>";
       }
       {
         key = "<leader>sr";

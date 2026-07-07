@@ -4,13 +4,6 @@
 
     keymaps = [
       {
-        key = "s";
-        mode = "n";
-        silent = true;
-        action = "<cmd>lua MiniJump2d.start(MiniJump2d.builtin_opts.single_character)<cr>";
-        desc = "Jump2d";
-      }
-      {
         key = "K";
         mode = "n";
         silent = true;
@@ -18,11 +11,25 @@
         desc = "LSP Hover";
       }
       {
-        key = "<C-tab>";
+        key = "L";
         mode = "n";
         silent = true;
         action = "<cmd>bnext<cr>";
         desc = "Next Buffer";
+      }
+      {
+        key = "H";
+        mode = "n";
+        silent = true;
+        action = "<cmd>bprevious<cr>";
+        desc = "Previous Buffer";
+      }
+      {
+        key = "<leader>e";
+        mode = ["n" "v"];
+        silent = true;
+        action = "<cmd>lua MiniFiles.open()<cr>";
+        desc = "File manager";
       }
 
       # Format
@@ -99,20 +106,6 @@
         silent = true;
         action = "<cmd>set relativenumber!<cr>";
         desc = "Toggle relative line numbers";
-      }
-      {
-        key = "<leader>ut";
-        mode = "n";
-        silent = true;
-        action = "<cmd>set showtabline=2<cr>";
-        desc = "Show tabline";
-      }
-      {
-        key = "<leader>uT";
-        mode = "n";
-        silent = true;
-        action = "<cmd>set showtabline=0<cr>";
-        desc = "Hide tabline";
       }
 
       # Todos
@@ -229,48 +222,6 @@
         desc = "Save file";
       }
 
-      # Deactivate "esc"
-      {
-        key = "<Esc>";
-        mode = [
-          "n"
-          "i"
-          "v"
-        ];
-        silent = true;
-        action = "<Nop>";
-        desc = "Disable Escape";
-      }
-
-      # Disable Arrow Keys in Normal Mode and Middle click
-      {
-        key = "<Up>";
-        mode = "n";
-        silent = true;
-        action = "<Nop>";
-        desc = "Disable Up Arrow";
-      }
-      {
-        key = "<Down>";
-        mode = "n";
-        silent = true;
-        action = "<Nop>";
-        desc = "Disable Down Arrow";
-      }
-      {
-        key = "<Left>";
-        mode = "n";
-        silent = true;
-        action = "<Nop>";
-        desc = "Disable Left Arrow";
-      }
-      {
-        key = "<Right>";
-        mode = "n";
-        silent = true;
-        action = "<Nop>";
-        desc = "Disable Right Arrow";
-      }
       {
         key = "<MiddleMouse>";
         mode = [

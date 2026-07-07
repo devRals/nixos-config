@@ -146,12 +146,10 @@ in {
       input = {
         kb_layout = keyboardLayout;
 
-        kb_options = "caps:escape";
+        kb_options = "caps:escape"; # Change CapsLock to Escape
         follow_mouse = 1;
-        sensitivity = 0.5;
-        repeat_delay = 300;
-        repeat_rate = 50;
-        numlock_by_default = true;
+        sensitivity = -0.7;
+        repeat_delay = 200;
 
         touchpad = {
           natural_scroll = true;
