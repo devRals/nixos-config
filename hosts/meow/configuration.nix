@@ -6,7 +6,7 @@
     ../../nixos/fonts.nix
     ../../nixos/home-manager.nix
     ../../nixos/nix.nix
-    ../../nixos/systemd-boot.nix
+    ../../nixos/grub.nix # CHANGEME: Be make sure to edit your bootloader settings to match your devices hardware
     ../../nixos/tuigreet.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix

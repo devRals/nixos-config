@@ -6,7 +6,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     stylix.url = "github:danth/stylix";
     nvf.url = "github:notashelf/nvf";
@@ -19,6 +19,15 @@
     };
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    caelestia-cli = {
+      url = "github:caelestia-dots/cli";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

@@ -5,7 +5,7 @@
 }: {
   home.packages = with pkgs-stable; [
     vlc # Video player
-    obs # Advanced Video Recorder and Stream manager
+    obs-studio # Advanced Video Recorder and Stream manager
     resources # Resource monitor
     ticktick # Todo app
     gimp # Image editor
@@ -13,7 +13,6 @@
     onlyoffice-desktopeditors # Office suite
     blanket # Listen to different sounds
     signal-desktop # Messaging app
-    librewolf # Backup browser
 
     # I love TUIs
     caligula # User-friendly, lightweight TUI for disk imaging (ISO, USB BOOT)

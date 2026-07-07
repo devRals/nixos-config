@@ -34,9 +34,6 @@
   home = {
     inherit (config.var) username;
     homeDirectory = "/home/" + config.var.username;
-    file.".face" = {
-      source = config.var.profilePicture;
-    };
 
     # Don't touch this
     stateVersion = "24.05";
