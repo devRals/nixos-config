@@ -16,10 +16,6 @@
         url = "https://cobalt.meowing.de";
       }
       {
-        name = "Mazanoke (image)";
-        url = "https://mazanoke.hadi.icu";
-      }
-      {
         name = "Vert";
         url = "https://vert.sh";
       }

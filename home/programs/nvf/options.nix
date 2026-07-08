@@ -1,23 +1,21 @@
 {lib, ...}: {
   vim = {
-    viAlias = false;
+    viAlias = true;
     vimAlias = true;
-    withNodeJs = true;
     options = {
       autoindent = true;
       smartindent = true;
-      shiftwidth = 2;
+      shiftwidth = 4;
       foldlevel = 99;
       foldcolumn = "auto:1";
       mousescroll = "ver:1,hor:1";
       mousemoveevent = true;
       fillchars = "eob:‿,fold: ,foldopen:▼,foldsep:⸽,foldclose:⏵";
       signcolumn = "yes";
-      tabstop = 2;
-      softtabstop = 2;
+      tabstop = 4;
+      softtabstop = 4;
       wrap = false;
     };
-    globals.navic_silence = true;
     clipboard = {
       enable = true;
       registers = "unnamedplus";

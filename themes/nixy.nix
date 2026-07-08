@@ -9,11 +9,11 @@
     default = {
       rounding = 2;
       bar-rounding = 20 + 10;
-      bar-thickness = 0;
+      bar-thickness = 2;
       gaps-in = 8;
-      gaps-out = 8 * 2;
-      active-opacity = 0.96;
-      inactive-opacity = 0.92;
+      gaps-out = 8;
+      active-opacity = 1;
+      inactive-opacity = 0.85;
       blur = false;
       border-size = 2;
       animation-speed = "fast"; # "fast" | "medium" | "slow"

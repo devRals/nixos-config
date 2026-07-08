@@ -25,6 +25,13 @@
         desc = "Previous Buffer";
       }
       {
+        key = "<leader>bd";
+        mode = "n";
+        silent = true;
+        action = "<cmd>bdelete<cr>";
+        desc = "Delete Buffer";
+      }
+      {
         key = "<leader>e";
         mode = ["n" "v"];
         silent = true;

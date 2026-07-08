@@ -8,9 +8,7 @@
     (import ./general.nix)
     ++ (import ./tools.nix)
     ++ (import ./entertainment.nix)
-    ++ (import ./infosec.nix)
-    ++ (import ./other.nix)
-    ++ (import ./jack.nix);
+    ++ (import ./other.nix);
 
   c = config.lib.stylix.colors;
 
@@ -140,7 +138,6 @@ in {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Bookmarks</title>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0">
       <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 

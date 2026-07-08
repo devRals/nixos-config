@@ -31,7 +31,7 @@
         { mode = 'v', keys = '<Leader>!', desc = 'shell' },
         { mode = 'n', keys = '<Leader>e', desc = 'files' },
       },
-      window = { delay = 300 },
+      window = { delay = 200 },
     })
   '';
 
@@ -48,5 +48,6 @@
     clue.enable = true;
     surround.enable = true;
     files.enable = true;
+    tabline.enable = true;
   };
 }

@@ -6,21 +6,14 @@
   home.packages = with pkgs-stable; [
     vlc # Video player
     obs-studio # Advanced Video Recorder and Stream manager
-    resources # Resource monitor
-    ticktick # Todo app
     gimp # Image editor
-    switcheroo # Convert images between different formats
-    onlyoffice-desktopeditors # Office suite
     blanket # Listen to different sounds
-    signal-desktop # Messaging app
 
     # I love TUIs
-    caligula # User-friendly, lightweight TUI for disk imaging (ISO, USB BOOT)
     browsh # A modern text-based browser that renders anything that a modern browser can. It runs in a terminal and can be used remotely over SSH
     dysk # A terminal-based disk usage analyzer
     wikiman # Offline search engine for manual pages (arch wiki, tldr)
     wiremix # Simple TUI mixer for PipeWire
-    slides # A terminal-based presentation tool that allows you to create and deliver presentations directly from the command line
     pkgs.wifitui # TUI for managing wifi
 
     # I love CLIs
@@ -29,7 +22,6 @@
     gh-dash # A terminal dashboard for GitHub
     figlet # Transform text into ASCII art
     pastel # Command-line tool to generate, analyze, convert and manipulate colors
-    imagemagick # Image manipulation tool
     chafa # Image to ANSI/Unicode converter and more.
   ];
 }

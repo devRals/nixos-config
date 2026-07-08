@@ -3,16 +3,14 @@
   lib,
   pkgs,
   ...
-}:
-
-{
+}: {
   imports = [
     # Choose your theme here:
     ../../themes/nixy.nix
   ];
 
   config.var = {
-    hostname = "nixos";
+    hostname = "meow";
     username = "devrals";
     configDirectory = "/home/" + config.var.username + "/.config/nixos"; # The path of the nixos configuration directory
 
@@ -29,6 +27,11 @@
 
     autoUpgrade = false;
     autoGarbageCollector = true;
+
+    profilePicture = pkgs.fetchurl {
+      url = "https://avatars.githubusercontent.com/u/79636106";
+      hash = "sha256-8ldddiydE5OBYoHj8hBKrXuh64AEUxmcbKDbNNm032Q=";
+    };
   };
 
   # DON'T TOUCH THIS

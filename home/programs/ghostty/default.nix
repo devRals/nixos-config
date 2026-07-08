@@ -21,9 +21,9 @@ in {
     installVimSyntax = true;
     enableZshIntegration = true;
     settings = {
-      window-padding-x = 10;
+      window-padding-x = 5;
+      window-padding-y = 5;
       confirm-close-surface = false;
-      window-padding-y = 10;
       clipboard-read = "allow";
       clipboard-write = "allow";
       copy-on-select = "clipboard";

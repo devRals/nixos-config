@@ -3,9 +3,7 @@
     (import ./bookmarks/general.nix)
     ++ (import ./bookmarks/tools.nix)
     ++ (import ./bookmarks/entertainment.nix)
-    ++ (import ./bookmarks/infosec.nix)
-    ++ (import ./bookmarks/other.nix)
-    ++ (import ./bookmarks/jack.nix);
+    ++ (import ./bookmarks/other.nix);
 
   toChromium = items:
     map (item:
@@ -45,9 +43,9 @@ in {
       DnsOverHttpsTemplates = "https://dns.quad9.net/dns-query";
 
       DefaultSearchProviderEnabled = true;
-      DefaultSearchProviderName = "Startpage";
-      DefaultSearchProviderSearchURL = "https://www.startpage.com/do/search?q={searchTerms}";
-      DefaultSearchProviderSuggestURL = "https://www.startpage.com/do/suggest?q={searchTerms}";
+      DefaultSearchProviderName = "DuckDuckGo";
+      DefaultSearchProviderSearchURL = "https://www.duckduckgo.com/search?q={searchTerms}";
+      DefaultSearchProviderSuggestURL = "https://www.duckduckgo.com/suggest?q={searchTerms}";
 
       NewTabPageLocation = "http://127.0.0.1:8888";
       HomepageIsNewTabPage = false;

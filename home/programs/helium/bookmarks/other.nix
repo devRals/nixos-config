@@ -41,10 +41,6 @@
         name = "MyNixOS";
         url = "https://mynixos.com";
       }
-      {
-        name = "Amazon";
-        url = "https://amazon.fr";
-      }
     ];
   }
 ]
