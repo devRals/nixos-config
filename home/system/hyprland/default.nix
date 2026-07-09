@@ -13,7 +13,6 @@
   rounding = config.theme.rounding;
   blur = config.theme.blur;
   keyboardLayout = config.var.keyboardLayout;
-  background = "rgba(" + config.lib.stylix.colors.base00 + "EE)";
 in {
   imports = [
     ./animations.nix
@@ -32,7 +31,6 @@ in {
     adw-gtk3
     hyprshot
     hyprpicker
-    swappy
     imv
     wf-recorder
     wlr-randr
@@ -55,8 +53,12 @@ in {
     };
 
     settings = {
+      source = [
+        "~/.cache/wal/colors-hyprland.conf"
+      ];
       exec-once = [
         "dbus-update-activation-environment --systemd --all &"
+        "swaybg -m fill -i ~/.cache/wallpaper &"
       ];
 
       monitor = [
@@ -89,7 +91,7 @@ in {
         gaps_out = gaps-out;
         border_size = border-size;
         layout = "dwindle";
-        "col.inactive_border" = lib.mkForce background;
+        "col.inactive_border" = lib.mkForce "$color5";
       };
 
       decoration = {
