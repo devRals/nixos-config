@@ -17,6 +17,10 @@
         sourcePlugins = [
           pkgs.vimPlugins.cmp-cmdline
         ];
+        mappings = {
+          next = "<C-n>";
+          previous = "<C-p>";
+        };
       };
     };
 

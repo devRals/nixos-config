@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   vim = {
     diagnostics = {
       enable = true;
@@ -31,7 +31,7 @@
       trouble.enable = true;
       lspSignature.enable = true;
       lspconfig.enable = true;
-      formatOnSave = false;
+      formatOnSave = true;
       mappings.format = null;
       inlayHints.enable = true;
       servers.nil.settings.nix.autoArchive = true;
@@ -74,7 +74,6 @@
           servers = ["pyright"];
         };
       };
-      astro.enable = true;
       go.enable = true;
       markdown = {
         enable = true;
@@ -98,6 +97,7 @@
       nix.enable = true;
       lua.enable = true;
       rust.enable = true;
+      qml.enable = true;
     };
     formatter = {
       conform-nvim = {

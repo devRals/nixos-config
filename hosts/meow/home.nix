@@ -22,6 +22,8 @@
     # System (Desktop environment like stuff)
     ../../home/system/hyprland
     ../../home/system/hyprpaper
+    ../../home/system/quickshell
+    ../../home/system/wofi
     ../../home/system/mime
     ../../home/system/udiskie
 
