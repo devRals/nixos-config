@@ -28,7 +28,6 @@ in {
   };
   nix = {
     nixPath = ["nixpkgs=${inputs.nixpkgs}"];
-    channel.enable = false;
     extraOptions = ''
       warn-dirty = false
     '';
