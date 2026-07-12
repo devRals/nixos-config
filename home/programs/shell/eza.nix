@@ -1,4 +1,3 @@
-# Eza is a ls replacement
 {
   programs.eza = {
     enable = true;

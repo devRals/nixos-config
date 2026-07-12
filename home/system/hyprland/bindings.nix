@@ -1,59 +1,91 @@
 {
+  lib,
   pkgs,
   config,
   ...
-}: {
-  wayland.windowManager.hyprland.settings = {
-    "$mod" = "SUPER";
-    "$shiftMod" = "SUPER_SHIFT";
+}: let
+  terminal = "\"${pkgs.kitty}/bin/kitty\"";
+  browser = "\"${config.programs.helium.package}/bin/helium\"";
+  btop = "\"${pkgs.kitty}/bin/kitty -e btop\"";
+  file-manager = "\"${pkgs.thunar}/bin/thunar\"";
 
+  mod = "SUPER";
+
+  mkBinding = key: dispatch: extraArgs: {
+    _args = [
+      (lib.generators.mkLuaInline "\"${key}\"")
+      (lib.generators.mkLuaInline "${dispatch}")
+      extraArgs
+    ];
+  };
+in {
+  wayland.windowManager.hyprland.settings = {
     bind =
       [
-        # Quick launch
-        "$mod,RETURN, exec, uwsm app -- ${pkgs.ghostty}/bin/ghostty" # Ghostty (terminal)
-        "$mod,B, exec, uwsm app -- ${config.programs.helium.package}/bin/helium" # Browser
-        "$mod,F, exec,  uwsm app -- ${pkgs.thunar}/bin/thunar" # Thunar
+        # Programs
+        (mkBinding "${mod} + RETURN" "hl.dsp.exec_cmd(${terminal})" {})
+        (mkBinding "${mod} + T" "hl.dsp.exec_cmd(${btop})" {})
+        (mkBinding "${mod} + B" "hl.dsp.exec_cmd(${browser})" {})
+        (mkBinding "${mod} + F" "hl.dsp.exec_cmd(${file-manager})" {})
 
         # Windows
-        "$mod,W, killactive," # Close window
-        "SHIFT, F11, fullscreen" # Toggle Fullscreen
-        "$mod,V, togglefloating," # Toggle Floating
+        (mkBinding "${mod} + W" "hl.dsp.window.close()" {locked = true;})
+        (mkBinding "${mod} + V" "hl.dsp.window.float()" {})
 
-        # Focus Windows
-        "$mod,H, movefocus, l" # Move focus left
-        "$mod,J, movefocus, d" # Move focus Down
-        "$mod,K, movefocus, u" # Move focus Up
-        "$mod,L, movefocus, r" # Move focus Right
-        "$shiftMod,H, swapwindow, l" # Focus previous monitor
-        "$shiftMod,J, swapwindow, d" # Remove from master
-        "$shiftMod,K, swapwindow, u" # Add to master
-        "$shiftMod,L, swapwindow, r" # Focus next monitor
+        (mkBinding "${mod} + L" "hl.dsp.focus({ direction = \"r\" })" {})
+        (mkBinding "${mod} + H" "hl.dsp.focus({ direction = \"l\" })" {})
+        (mkBinding "${mod} + J" "hl.dsp.focus({ direction = \"d\" })" {})
+        (mkBinding "${mod} + K" "hl.dsp.focus({ direction = \"u\" })" {})
+
+        (mkBinding "${mod} + SHIFT + L" "hl.dsp.window.move({ direction = \"r\" })" {})
+        (mkBinding "${mod} + SHIFT + H" "hl.dsp.window.move({ direction = \"l\" })" {})
+        (mkBinding "${mod} + SHIFT + J" "hl.dsp.window.move({ direction = \"d\" })" {})
+        (mkBinding "${mod} + SHIFT + K" "hl.dsp.window.move({ direction = \"u\" })" {})
+
+        # Mouse-Window Interactions
+        (mkBinding "${mod} + mouse:272" "hl.dsp.window.drag()" {mouse = true;})
+        (mkBinding "${mod} + mouse:273" "hl.dsp.window.resize()" {mouse = true;})
+
+        # Media keys
+        (mkBinding "XF86AudioRaiseVolume" "hl.dsp.exec_cmd(\"wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+\")" {
+          locked = true;
+          repeating = true;
+        })
+        (mkBinding "XF86AudioLowerVolume" "hl.dsp.exec_cmd(\"wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-\")" {
+          locked = true;
+          repeating = true;
+        })
+        (mkBinding "XF86AudioMute" "hl.dsp.exec_cmd(\"wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle\")" {
+          locked = true;
+          repeating = true;
+        })
+        (mkBinding "XF86AudioMicMute" "hl.dsp.exec_cmd(\"wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle\")" {
+          locked = true;
+          repeating = true;
+        })
+        (mkBinding "XF86MonBrightnessUp" "hl.dsp.exec_cmd(\"brightnessctl -e4 -n2 set 5%+\")" {
+          locked = true;
+          repeating = true;
+        })
+        (mkBinding "XF86MonBrightnessDown" "hl.dsp.exec_cmd(\"brightnessctl -e4 -n2 set 5%-\")" {
+          locked = true;
+          repeating = true;
+        })
+
+        (mkBinding "XF86AudioNext" "hl.dsp.exec_cmd(\"playerctl next\")" {locked = true;})
+        (mkBinding "XF86AudioPause" "hl.dsp.exec_cmd(\"playerctl play-pause\")" {locked = true;})
+        (mkBinding "XF86AudioPlay" "hl.dsp.exec_cmd(\"playerctl play-pause\")" {locked = true;})
+        (mkBinding "XF86AudioPrev" "hl.dsp.exec_cmd(\"playerctl previous\")" {locked = true;})
       ]
-      ++ (builtins.concatLists (
-        builtins.genList (
-          i: let
+      ++ (
+        # Workspaces
+        builtins.concatLists (builtins.genList (i: let
             ws = i + 1;
           in [
-            "$mod,code:1${toString i}, workspace, ${toString ws}"
-            "$mod SHIFT,code:1${toString i}, movetoworkspace, ${toString ws}"
-          ]
-        )
-        9
-      ));
-
-    bindm = [
-      "$mod,mouse:272, movewindow" # Move Window (mouse)
-      "$mod,mouse:273, resizewindow" # Resize Window (mouse)
-    ];
-
-    bindl = [
-      # Sound
-      ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-      ", XF86AudioRaiseVolume, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
-      ", XF86AudioLowerVolume, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-    ];
-
-    bindin = [
-    ];
+            (mkBinding "${mod} + code:1${toString i}" "hl.dsp.focus({ workspace = ${toString ws}})" {})
+            (mkBinding "${mod} + SHIFT + code:1${toString i}" "hl.dsp.window.move({ workspace = ${toString ws} })" {})
+          ])
+          9)
+      );
   };
 }

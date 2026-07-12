@@ -1,28 +1,30 @@
 {
-  description = ''
-    Nixy simplifies and unifies the Hyprland ecosystem with a modular, easily customizable setup.
-    It provides a structured way to manage your system configuration and dotfiles with minimal effort.
-  '';
-
+  description = "devRals's nixos config. Forked from anotherHadi's nixos config";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    stylix.url = "github:danth/stylix";
-    nvf.url = "github:notashelf/nvf";
-    notashelf-tuigreet.url = "github:NotAShelf/tuigreet";
-    helium-browser.url = "github:oxcl/nix-flake-helium-browser";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; # Nixpkgs
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05"; # Nixpkgs Stable
+    hyprland.url = "github:hyprwm/Hyprland"; # Hyprland
+    nvf.url = "github:notashelf/nvf"; # Neovim Nix Configuration
+    helium-browser.url = "github:oxcl/nix-flake-helium-browser"; # Chromium Based _un-googled_ Browser
+    tuigreet.url = "github:NotAShelf/tuigreet"; # Greetd Based Login Manager
+    awww.url = "git+https://codeberg.org/LGFae/awww"; # Wallpaper software
 
+    # System theming
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # Search nixpkgs when no avaliable command is found
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Home Manager
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
   outputs = inputs @ {
     nixpkgs,
     nixpkgs-stable,
@@ -40,17 +42,9 @@
         pkgs-stable
         ;
     };
-    merge = nixpkgs.lib.foldl nixpkgs.lib.recursiveUpdate {};
-  in
-    merge [
-      (import ./home/programs/nvf/flake.nix args)
-      (import ./home/programs/group/flake.nix args)
-      (import ./home/programs/nixy/flake.nix args)
-      {
-        formatter.${system} = pkgs.alejandra;
-        nixosConfigurations = {
-          meow = import ./hosts/meow/flake.nix args; # cool hostname :3
-        };
-      }
-    ];
+  in {
+    nixosConfigurations = {
+      meow = import ./hosts/meow/flake.nix args; # cool hostname :3
+    };
+  };
 }

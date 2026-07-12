@@ -5,25 +5,22 @@
   ...
 }: {
   imports = [
-    # Choose your theme here:
-    ../../themes/nixy.nix
+    ../../themes/tokyonight
   ];
 
   config.var = {
-    hostname = "meow";
     username = "devrals";
-    configDirectory = "/home/" + config.var.username + "/.config/nixos"; # The path of the nixos configuration directory
+    hostname = "meow";
+    configDirectory = "/home/" + config.var.username + "/.config/nixos";
 
-    keyboardLayout = "tr";
+    keyboardLayout = {
+      xkb = "tr";
+      keyMap = "trq";
+    };
 
     timeZone = "Europe/Istanbul";
     defaultLocale = "en_US.UTF-8";
     extraLocale = "en_US.UTF-8";
-
-    git = {
-      username = "devRals";
-      email = "fluffycutegoatboi@gmail.com";
-    };
 
     autoUpgrade = false;
     autoGarbageCollector = true;
@@ -34,11 +31,8 @@
     };
   };
 
-  # DON'T TOUCH THIS
-  options = {
-    var = lib.mkOption {
-      type = lib.types.attrs;
-      default = {};
-    };
+  options.var = lib.mkOption {
+    type = lib.types.attrs;
+    default = {};
   };
 }

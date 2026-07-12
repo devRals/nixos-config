@@ -1,56 +1,19 @@
-{config, ...}: {
-  imports = [
-    # Programs
-    ../../home/programs/helium
-    ../../home/programs/proton
-    ../../home/programs/ghostty
-    ../../home/programs/nvf
-    ../../home/programs/shell
-    ../../home/programs/git
-    ../../home/programs/git/lazygit.nix
-    # ../../home/programs/git/signing.nix # CHANGEME: Change the key or remove this file
-    ../../home/programs/thunar
-    ../../home/programs/nixy
-    ../../home/programs/nightshift
-    ../../home/programs/nix-utils
-    ../../home/programs/yazi
+{ config, ... }:
 
-    ../../home/programs/group/basic-apps.nix
-    ../../home/programs/group/dev.nix
-    ../../home/programs/group/misc.nix
+{
+	imports = [ 
+		../../home/programs
+		../../home/system
+		../../home/scripts
 
-    # System (Desktop environment like stuff)
-    ../../home/system/hyprland
-    ../../home/system/quickshell
-    ../../home/system/swaybg
-    ../../home/system/pywal
-    ../../home/system/wofi
-    ../../home/system/mime
-    ../../home/system/udiskie
+		./variables.nix
+ 	];
 
-    # Scripts (Custom Executables)
-    ../../home/scripts
+	home = {
+		username = config.var.username;
+		homeDirectory = "/home/" + config.var.username;
+		file.".face".source = config.var.profilePicture;
 
-    ./variables.nix # Mostly user-specific configuration
-    # ./secrets # CHANGEME: You should probably remove this line, this is where I store my secrets
-  ];
-
-  home = {
-    inherit (config.var) username;
-    homeDirectory = "/home/" + config.var.username;
-    file.".face" = {
-      source = config.var.profilePicture;
-    };
-
-    # Don't touch this
-    stateVersion = "24.05";
-  };
-
-  programs = {
-    home-manager.enable = true;
-    nixy = {
-      enable = true;
-      configDirectory = config.var.configDirectory;
-    };
-  };
+		stateVersion = "26.05";
+	};
 }

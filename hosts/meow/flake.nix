@@ -9,10 +9,9 @@ nixpkgs.lib.nixosSystem {
       nixpkgs.overlays = [];
       _module.args = {inherit inputs;};
     }
-    inputs.home-manager.nixosModules.home-manager
-    inputs.stylix.nixosModules.stylix
-    inputs.nix-index-database.nixosModules.default
+    inputs.home-manager.nixosModules.default
     inputs.helium-browser.nixosModules.default
+    inputs.stylix.nixosModules.default
     ./configuration.nix
   ];
 }

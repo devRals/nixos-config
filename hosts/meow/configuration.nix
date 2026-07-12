@@ -1,25 +1,36 @@
-{config, ...}: {
-  imports = [
-    # Mostly system related configuration
-    ../../nixos/audio.nix
-    ../../nixos/bluetooth.nix
-    ../../nixos/fonts.nix
-    ../../nixos/home-manager.nix
-    ../../nixos/nix.nix
-    ../../nixos/grub.nix # CHANGEME: Be make sure to edit your bootloader settings to match your devices hardware
-    ../../nixos/tuigreet.nix
-    ../../nixos/users.nix
-    ../../nixos/utils.nix
-    ../../nixos/hyprland.nix
-    ../../home/programs/helium/system.nix # I hate browser's configuration..
+{config, inputs, pkgs, ...}: {
+	imports = [
+		../../system/audio.nix
+		../../system/bluethooth.nix
+		../../system/bootloader.nix
+		../../system/fonts.nix
+		../../system/graphics.nix
+		../../system/hyprland.nix
+		../../system/locale.nix
+		../../system/network.nix
+		../../system/nix.nix
+		../../system/programs.nix
+		../../system/tuigreet.nix
+		../../system/users.nix
 
-    # You should let those lines as is
-    ./hardware-configuration.nix
-    ./variables.nix
-  ];
+		./hardware-configuration.nix
+		./variables.nix
+	];
 
-  home-manager.users."${config.var.username}" = import ./home.nix;
+	home-manager = {
+		users."${config.var.username}" = import ./home.nix;
+		useGlobalPkgs = true;
+		useUserPackages = true;
+		backupFileExtension = "hm_backup";
+		extraSpecialArgs = {
+			inherit inputs;
+			pkgs-stable = import inputs.nixpkgs-stable {
+				system = pkgs.stdenv.hostPlatform.system;
+				config.allowUnfree = config.var.allowUnfree;
+			};
+		};
+	}; 
 
-  # Don't touch this
-  system.stateVersion = "24.05";
+	# DON'T CHANGE THIS
+	system.stateVersion = "26.05";
 }

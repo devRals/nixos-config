@@ -5,6 +5,7 @@
       quickfile.enabled = true;
       bufdelete.enabled = true;
       gitsigns.enabled = true;
+      indent.enabled = true;
       lazygit = {
         enabled = true;
         configure = false;

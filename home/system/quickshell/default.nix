@@ -1,10 +1,12 @@
 {
-  inputs,
-  lib,
-  ...
-}: {
-  programs.quickshell.enable = true;
-  programs.quickshell.systemd.enable = true;
+  programs.quickshell = {
+    enable = true;
 
-  home.file.".config/quickshell".source = ./quickshell;
+    systemd.enable = true;
+
+    activeConfig = "default";
+    configs = {
+      default = ./configs/default;
+    };
+  };
 }
