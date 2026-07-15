@@ -1,11 +1,11 @@
 import QtQuick
-import Quickshell
 import Quickshell.Hyprland
 
 Rectangle {
-    property int workspaceIndex: 0
+    required property int workspaceId
+    required property bool isActive
+    required property bool hasWindows
     property int size: 13
-    property bool isActive: false
     property string buttonColor: "#" + theme.base05
 
     implicitWidth: isActive ? size + 25 : size
@@ -13,7 +13,7 @@ Rectangle {
 
     radius: height / 2
 
-    color: isActive ? buttonColor : "transparent"
+    color: isActive || hasWindows ? buttonColor : "transparent"
 
     border.width: 2
     border.color: buttonColor
@@ -35,7 +35,7 @@ Rectangle {
         acceptedButtons: Qt.LeftButton
 
         onClicked: {
-            Hyprland.dispatch(`hl.dsp.focus({ workspace = ${workspaceIndex} })`);
+            Hyprland.dispatch(`hl.dsp.focus({ workspace = ${workspaceId} })`);
         }
     }
 }

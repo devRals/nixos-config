@@ -1,7 +1,7 @@
-import QtQuick
-import QtQuick.Layouts
 import Quickshell
-import Quickshell.Io
+
+import qs.Modules
+import qs.Services
 
 ShellRoot {
     id: shellRoot
@@ -12,4 +12,5 @@ ShellRoot {
     }
 
     Bar {}
+    RightSidePanel {}
 }

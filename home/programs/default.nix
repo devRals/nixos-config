@@ -10,6 +10,7 @@
     ./shell
     ./nix-utils
     ./yazi
+    ./wine
   ];
 
   home.packages = with pkgs-stable; [
@@ -29,6 +30,8 @@
     gimp
     blanket
     thunar
+    libreoffice
+    prismlauncher # An open source Minecraft launcher
 
     # TUI
     glow
@@ -37,6 +40,7 @@
     wikiman
     wiremix
     pkgs.wifitui
+    pkgs.bluetui
     lazygit
     ffmpeg
 
