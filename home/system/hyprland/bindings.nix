@@ -42,6 +42,8 @@ in {
         (mkBinding "${mod} + SHIFT + J" "hl.dsp.window.move({ direction = \"d\" })" {})
         (mkBinding "${mod} + SHIFT + K" "hl.dsp.window.move({ direction = \"u\" })" {})
 
+        (mkBinding "SHIFT + F11" "hl.dsp.window.fullscreen()" {})
+
         # Mouse-Window Interactions
         (mkBinding "${mod} + mouse:272" "hl.dsp.window.drag()" {mouse = true;})
         (mkBinding "${mod} + mouse:273" "hl.dsp.window.resize()" {mouse = true;})

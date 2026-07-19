@@ -1,17 +1,8 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
-  programs.quickshell = {
-    enable = true;
-    package = inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default;
+{inputs, ...}: {
+  imports = [
+    inputs.dqs.homeModules.default
+  ];
 
-    systemd.enable = true;
-
-    activeConfig = "default";
-    configs = {
-      default = ./configs/default;
-    };
-  };
+  # This program is Work in progress. Check it out in https://codeberg.org/devRals/DQS
+  programs.dqs.enable = true;
 }

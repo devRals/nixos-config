@@ -1,19 +1,18 @@
-{ config, ... }:
+{config, ...}: {
+  imports = [
+    ../../home/programs
+    ../../home/system
+    ../../home/scripts
 
-{
-	imports = [ 
-		../../home/programs
-		../../home/system
-		../../home/scripts
+    ./variables.nix
+  ];
 
-		./variables.nix
- 	];
+  home = {
+    username = config.var.username;
+    homeDirectory = "/home/" + config.var.username;
+    file.".face".source = config.var.profilePicture;
+    pointerCursor.enable = true;
 
-	home = {
-		username = config.var.username;
-		homeDirectory = "/home/" + config.var.username;
-		file.".face".source = config.var.profilePicture;
-
-		stateVersion = "26.05";
-	};
+    stateVersion = "26.05";
+  };
 }

@@ -11,6 +11,8 @@
     ./nix-utils
     ./yazi
     ./wine
+
+    ./extraPrograms.nix # I put my personally preferred programs here
   ];
 
   home.packages = with pkgs-stable; [
@@ -31,7 +33,7 @@
     blanket
     thunar
     libreoffice
-    prismlauncher # An open source Minecraft launcher
+    prismlauncher
 
     # TUI
     glow
@@ -52,5 +54,6 @@
     pastel
     chafa
     wl-clipboard
+    playerctl
   ];
 }

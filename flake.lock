@@ -136,6 +136,27 @@
         "type": "github"
       }
     },
+    "dqs": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "quickshell": "quickshell"
+      },
+      "locked": {
+        "lastModified": 1784314028,
+        "narHash": "sha256-JnC8R5EdpNwP5KMpMuTDvlCLmMm5qDDpPF7mQeXe4UQ=",
+        "ref": "refs/heads/main",
+        "rev": "aae2d915ad17e9e785dda43df18f2f3396c3fbca",
+        "revCount": 5,
+        "type": "git",
+        "url": "https://codeberg.org/devRals/DQS"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/devRals/DQS"
+      }
+    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -712,11 +733,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1783522502,
-        "narHash": "sha256-iffAls3iaNTyJC2faYcUXSI+Gp02cDjYl+MygxKl2GI=",
+        "lastModified": 1784120854,
+        "narHash": "sha256-KesHgItiZPgGX740axSiQLcIQ8D24MDqNpkKYWIek8k=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "0bb7ec54c8483066ec9d7720e780a5caa71f8612",
+        "rev": "753cc8a3a87467296ddd1fa93f0cc3e81120ee46",
         "type": "github"
       },
       "original": {
@@ -825,6 +846,7 @@
     "quickshell": {
       "inputs": {
         "nixpkgs": [
+          "dqs",
           "nixpkgs"
         ]
       },
@@ -845,6 +867,7 @@
     "root": {
       "inputs": {
         "awww": "awww",
+        "dqs": "dqs",
         "helium-browser": "helium-browser",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
@@ -852,7 +875,6 @@
         "nixpkgs": "nixpkgs_4",
         "nixpkgs-stable": "nixpkgs-stable",
         "nvf": "nvf",
-        "quickshell": "quickshell",
         "stylix": "stylix",
         "tuigreet": "tuigreet"
       }

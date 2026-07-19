@@ -1,6 +1,7 @@
 <div align="center">
     <img alt="nixos logo" src="./assets/logo.png" width="120px"/>
 </div>
+
 # devRals's NixOS Files
 
 My personal NixOS configuration and dotfiles.

@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    ../../themes/nord
+    ../../themes/catppuccin
   ];
 
   config.var = {

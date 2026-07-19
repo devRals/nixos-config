@@ -9,9 +9,9 @@
     tuigreet.url = "github:NotAShelf/tuigreet"; # Greetd Based Login Manager
     awww.url = "git+https://codeberg.org/LGFae/awww"; # Wallpaper software
 
-    # Quickshell
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+    # devRals's Quickshell configuration
+    dqs = {
+      url = "git+https://codeberg.org/devRals/DQS";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # System theming
