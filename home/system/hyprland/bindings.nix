@@ -10,6 +10,7 @@
   file-manager = "\"${pkgs.thunar}/bin/thunar\"";
 
   mod = "SUPER";
+  dqs = ipc-cmd: "hl.dsp.exec_cmd(\"qs -c dqs ipc call ${ipc-cmd}\")";
 
   mkBinding = key: dispatch: extraArgs: {
     _args = [
@@ -88,6 +89,12 @@ in {
             (mkBinding "${mod} + SHIFT + code:1${toString i}" "hl.dsp.window.move({ workspace = ${toString ws} })" {})
           ])
           9)
-      );
+      )
+      ++
+      # DQS Bindings
+      [
+        (mkBinding "${mod} + SPACE" (dqs "panel toggle bottom launcher") {})
+        (mkBinding "${mod} + ESCAPE" (dqs "panel toggle right session") {})
+      ];
   };
 }

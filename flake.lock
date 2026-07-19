@@ -144,11 +144,11 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1784314028,
-        "narHash": "sha256-JnC8R5EdpNwP5KMpMuTDvlCLmMm5qDDpPF7mQeXe4UQ=",
+        "lastModified": 1784459156,
+        "narHash": "sha256-8utWKr8V+mO5ZDWVy/k5mTGiV6uLbDflaPg7vsfhRYY=",
         "ref": "refs/heads/main",
-        "rev": "aae2d915ad17e9e785dda43df18f2f3396c3fbca",
-        "revCount": 5,
+        "rev": "0698c7fe58c8b771ee8320260b967c319be1bd16",
+        "revCount": 6,
         "type": "git",
         "url": "https://codeberg.org/devRals/DQS"
       },
