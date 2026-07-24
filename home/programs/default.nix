@@ -25,6 +25,7 @@
     cmatrix
     fastfetch
     tmux
+    lavat
 
     # GUI
     vlc
@@ -33,7 +34,6 @@
     blanket
     thunar
     libreoffice
-    prismlauncher
 
     # TUI
     glow
@@ -44,7 +44,6 @@
     pkgs.wifitui
     pkgs.bluetui
     lazygit
-    ffmpeg
 
     # CLI
     httpie
@@ -55,5 +54,6 @@
     chafa
     wl-clipboard
     playerctl
+    ffmpeg
   ];
 }

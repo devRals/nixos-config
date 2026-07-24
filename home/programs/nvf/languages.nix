@@ -90,7 +90,13 @@
         };
         extraDiagnostics.enable = true;
       };
-      typescript.enable = true;
+      typescript = {
+        enable = true;
+        lsp = {
+          enable = true;
+          servers = ["typescript-go"];
+        };
+      };
       css.enable = true;
       html.enable = true;
       bash.enable = true;
