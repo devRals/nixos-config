@@ -8,4 +8,6 @@
     olympus # Celeste Mod Loader (Everest) Launcher
     krita
   ];
+
+  programs.thunderbird.enable = true;
 }
