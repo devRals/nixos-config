@@ -30,10 +30,6 @@
       colorizer.enable = true;
     };
 
-    visuals = {
-      rainbow-delimiters.enable = true;
-    };
-
     presence.neocord.enable = true;
   };
 }

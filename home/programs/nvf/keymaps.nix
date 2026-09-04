@@ -216,7 +216,7 @@
       desc = "Vertical Resize +1";
     }
     {
-      key = "<C-Down>";
+      key = "<C-Left>";
       mode = [
         "n"
         "i"

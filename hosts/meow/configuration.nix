@@ -8,6 +8,7 @@
     ../../system/audio.nix
     ../../system/bluethooth.nix
     ../../system/bootloader.nix
+    ../../system/cpu-freq.nix
     ../../system/fonts.nix
     ../../system/graphics.nix
     ../../system/hyprland.nix

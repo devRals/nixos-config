@@ -1,5 +1,6 @@
 {pkgs, ...}: {
-  vim.extraPlugins = with pkgs.vimPlugins; {
-    my-custom-plugin = {};
-  };
+  vim.startPlugins = with pkgs.vimPlugins; [
+    hex-nvim
+  ];
+  vim.extraPlugins = with pkgs.vimPlugins; {};
 }

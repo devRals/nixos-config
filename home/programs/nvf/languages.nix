@@ -24,7 +24,6 @@
       autotagHtml = true;
       context.enable = true;
       highlight.enable = true;
-      textobjects.enable = true;
     };
     lsp = {
       enable = true;
@@ -66,6 +65,13 @@
       enableExtraDiagnostics = true;
       enableFormat = true;
       enableTreesitter = true;
+
+      tsx = {
+        enable = true;
+        format.enable = true;
+        lsp.enable = true;
+        lsp.servers = ["typescript-go"];
+      };
 
       python = {
         enable = true;
