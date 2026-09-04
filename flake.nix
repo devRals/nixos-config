@@ -9,6 +9,12 @@
     tuigreet.url = "github:NotAShelf/tuigreet"; # Greetd Based Login Manager
     awww.url = "git+https://codeberg.org/LGFae/awww"; # Wallpaper software
 
+    # A TUI (Terminal User Interface) based discord application
+    concord = {
+      url = "github:chojs23/concord";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # devRals's Quickshell configuration
     dqs = {
       url = "git+https://codeberg.org/devRals/DQS";
