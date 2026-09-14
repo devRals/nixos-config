@@ -23,7 +23,7 @@
     extraLocale = "en_US.UTF-8";
 
     autoUpgrade = false;
-    autoGarbageCollector = true;
+    autoGarbageCollector = false;
 
     profilePicture = pkgs.fetchurl {
       url = "https://avatars.githubusercontent.com/u/79636106";

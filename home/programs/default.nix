@@ -7,6 +7,7 @@
     ./helium
     ./kitty
     ./nvf
+    ./obsidian
     ./shell
     ./nix-utils
     ./yazi
