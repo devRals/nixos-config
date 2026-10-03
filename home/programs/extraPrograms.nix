@@ -10,6 +10,7 @@ in {
     concord # An open-source and simple TUI based discord clone
     prismlauncher # An open-source minecraft launcher
     olympus # Celeste Mod Loader (Everest) Launcher
+    localsend # Send files between devices that connected the same network
     proton-vpn
     krita
   ];
