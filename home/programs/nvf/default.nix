@@ -8,6 +8,7 @@
   programs.nvf = {
     enable = true;
     settings.imports = [
+      ./debugger.nix
       ./options.nix
       ./extra-plugins.nix
       ./keymaps.nix

@@ -22,7 +22,6 @@
     treesitter = {
       enable = true;
       autotagHtml = true;
-      context.enable = true;
       highlight.enable = true;
     };
     lsp = {
@@ -110,6 +109,8 @@
       lua.enable = true;
       rust.enable = true;
       qml.enable = true;
+      tex.enable = true;
+      wgsl.enable = true;
     };
     formatter = {
       conform-nvim = {

@@ -31,6 +31,7 @@
     # GUI
     vlc
     obs-studio
+    godot
     gimp
     blanket
     thunar
@@ -56,5 +57,6 @@
     wl-clipboard
     playerctl
     ffmpeg
+    tree
   ];
 }

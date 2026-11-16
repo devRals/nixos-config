@@ -16,6 +16,7 @@
     ../../system/network.nix
     ../../system/nix.nix
     ../../system/opentabletdriver.nix
+    ../../system/printing.nix
     ../../system/programs.nix
     ../../system/tuigreet.nix
     ../../system/users.nix

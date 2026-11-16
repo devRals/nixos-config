@@ -11,8 +11,9 @@ in {
     prismlauncher # An open-source minecraft launcher
     olympus # Celeste Mod Loader (Everest) Launcher
     localsend # Send files between devices that connected the same network
-    proton-vpn
-    krita
+    proton-vpn # It's in it's name
+    krita # An open-source drawing program
+    xournalpp # An open-source (again) note taking program (but with tablet and hand writting)
   ];
 
   programs.thunderbird.enable = true;
