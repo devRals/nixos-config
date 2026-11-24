@@ -1,7 +1,7 @@
 {
   imports = [
-    ./hyprland
-    ./wallpaper
-    ./quickshell
+    # ./hyprland
+    # ./wallpaper
+    # ./quickshell
   ];
 }

@@ -4,8 +4,9 @@
   ...
 }: {
   imports = [
+    # ./dux-files
     ./helium
-    ./kitty
+    # ./kitty
     ./nvf
     ./obsidian
     ./shell
@@ -36,6 +37,7 @@
     blanket
     thunar
     libreoffice
+    qalculate-qt
 
     # TUI
     glow
@@ -46,6 +48,7 @@
     pkgs.wifitui
     pkgs.bluetui
     lazygit
+    #pkgs.dux-gop
 
     # CLI
     httpie

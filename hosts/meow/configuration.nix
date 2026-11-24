@@ -9,6 +9,7 @@
     ../../system/bluethooth.nix
     ../../system/bootloader.nix
     ../../system/cpu-freq.nix
+    ../../system/dms.nix
     ../../system/fonts.nix
     ../../system/graphics.nix
     ../../system/hyprland.nix
@@ -18,7 +19,7 @@
     ../../system/opentabletdriver.nix
     ../../system/printing.nix
     ../../system/programs.nix
-    ../../system/tuigreet.nix
+    # ../../system/tuigreet.nix
     ../../system/users.nix
 
     ./extraPackages.nix

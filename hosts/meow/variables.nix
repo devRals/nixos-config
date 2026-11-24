@@ -22,6 +22,7 @@
     defaultLocale = "en_US.UTF-8";
     extraLocale = "en_US.UTF-8";
 
+    autoLogin = false;
     autoUpgrade = false;
     autoGarbageCollector = false;
 

@@ -6,8 +6,7 @@
     hyprland.url = "github:hyprwm/Hyprland"; # Hyprland
     nvf.url = "github:notashelf/nvf"; # Neovim Nix Configuration
     helium-browser.url = "github:oxcl/nix-flake-helium-browser"; # Chromium Based _un-googled_ Browser
-    tuigreet.url = "github:NotAShelf/tuigreet"; # Greetd Based Login Manager
-    awww.url = "git+https://codeberg.org/LGFae/awww"; # Wallpaper software
+    # tuigreet.url = "github:NotAShelf/tuigreet"; # Greetd Based Login Manager
 
     # A TUI (Terminal User Interface) based discord application
     concord = {
@@ -15,9 +14,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # DMS File Manager
+    # dfiles = {
+    #   url = "github:duxlabs-dev/dux-files";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
     # devRals's Quickshell configuration
-    dqs = {
-      url = "git+https://codeberg.org/devRals/DQS";
+    # dqs = {
+    #   url = "git+https://codeberg.org/devRals/DQS";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # System theming

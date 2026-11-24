@@ -1,0 +1,6 @@
+warning: updating lock file "/home/devrals/.config/nixos/flake.lock":
+• Removed input 'dfiles'
+• Removed input 'dfiles/dank-qml-common'
+• Removed input 'dfiles/dux-qt-base'
+• Removed input 'dfiles/dux-qt-base/nixpkgs'
+• Removed input 'dfiles/nixpkgs'

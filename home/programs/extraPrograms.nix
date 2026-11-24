@@ -14,6 +14,7 @@ in {
     proton-vpn # It's in it's name
     krita # An open-source drawing program
     xournalpp # An open-source (again) note taking program (but with tablet and hand writting)
+    texliveMinimal # A basic LaTeX compiler
   ];
 
   programs.thunderbird.enable = true;
